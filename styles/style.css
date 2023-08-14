@@ -1,0 +1,138 @@
+:root {
+  --main-background: #212529;
+  --claculator-background: #0000007e;
+  --output: #42484e;
+  --buttons: #4b4d4ea4;
+  --buttons-active: #4b4d4e46;
+  --btn-info: #b5c7da;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Playfair Display", serif;
+  width: 100%;
+  height: 100vh;
+
+  background-color: var(--main-background);
+  user-select: none;
+
+  position: relative;
+}
+
+.container {
+  position: absolute;
+  width: 330px;
+  height: 450px;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--claculator-background);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+
+  border-radius: 20px;
+}
+
+.output {
+  width: 100%;
+  height: 22%;
+
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+  background-color: var(--output);
+
+  color: #fff;
+
+  overflow: hidden;
+
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  gap: 3px;
+}
+
+.previous-operand {
+  font-size: 15px;
+  color: #ffffffaf;
+}
+
+.currentoperand {
+  font-size: 20px;
+  /* justify-self: end; */
+}
+
+.sub-container {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
+  row-gap: 1px;
+  column-gap: 1px;
+}
+
+button {
+  background: none;
+  border: none;
+  color: #fff;
+  background-color: var(--buttons);
+  cursor: pointer;
+}
+
+button:hover,
+button:active {
+  background-color: var(--buttons-active);
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.border-radius-left {
+  border-bottom-left-radius: 20px;
+}
+
+.border-radius-right {
+  border-bottom-right-radius: 20px;
+}
+
+.navigation {
+  position: absolute;
+  top: 18px;
+  left: 12px;
+}
+
+.btn--info:link,
+.btn--info:visited,
+.btn--info:hover,
+.btn--info:active {
+  text-decoration: none;
+}
+
+.icon--info {
+  height: 36px;
+  stroke: var(--btn-info);
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 250px;
+    height: 300px;
+  }
+}
